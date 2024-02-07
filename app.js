@@ -19,9 +19,9 @@ const schema = { name : String };
 const item = mongoose.model( "items" , schema);
 
 const workItems = [];
-const item1 = new item( { name : "welcom you bitch"} );
+const item1 = new item( { name : "welcome , for New page go to url/new_page"} );
 const item2 = new item( { name : "hit the +  button to add more"} );
-const item3 = new item( { name : "hit this to delete an item"} );
+const item3 = new item( { name : "hit the checkbox to delete an item"} );
 
 const defaultItems = [item1 , item2 , item3];
 
