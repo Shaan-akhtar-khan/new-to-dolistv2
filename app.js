@@ -115,7 +115,7 @@ const Itemschema = { name: String };
 const itemModel = mongoose.model("item", Itemschema);
 
 const workItems = [];
-const item1 = new itemModel({ name: "welcom you bitch" });
+const item1 = new itemModel({ name: "welcome , for a new page go to url/new_page" });
 const item2 = new itemModel({ name: "hit the + button to add more" });
 const item3 = new itemModel({ name: "hit this to delete an item" });
 //these are the items that are used to be the home page without enterng any data
