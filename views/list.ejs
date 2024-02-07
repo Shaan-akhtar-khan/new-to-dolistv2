@@ -1,0 +1,33 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1> <%= listTitle %> </h1>
+  </div>
+
+  <div class="box">
+
+  <%  newListItems.forEach( function(item) { %>     <!-- for each loop-->
+      <form action="/delete" method="post">
+        <div class="item">
+          <input type="checkbox" name ="checkbox" value = "<%= item._id %>" onchange = "this.form.submit()">
+          <!--                   //this ^checkbox is the one acessed in app.get(/delete)   //onchange means submit this form on click
+            //so that post request for /delete form action" is sent
+            //              value allows for the id to be shown in console for the same app.post("/delete") method  
+          had value attribute not been specified then only "checkbox : on " would have been printed for console.log(req.body) and 
+        for req.body.checkbox "on would have been printed but now for the same code _id is printed due to the value attribute"-->
+          <p><%=  item.name  %></p>
+        </div>
+        <input type = "hidden" , name = "listName" , value ="<%= listTitle %>"></input>
+      </form>
+    <% } ) %>
+ 
+       <form class="item" action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <!--                     req.body.newItem is enough to extract the input text-->
+        <button type="submit" name="list" value = "<%= listTitle %>"   >+</button>
+        <!--                   named it list so that whenever req.body.list is executed we get the ListTitle of the page on which the action was done
+         this  HELPS in showing the correct entry in the correct page -->
+      </form>
+  </div>
+
+<%- include("footer") -%>

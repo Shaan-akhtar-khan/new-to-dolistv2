@@ -1,0 +1,16 @@
+# Ignore node_modules directory
+package-lock/json
+node_modules/
+
+# Ignore logs and other build files
+logs/
+*.log
+npm-debug.log*
+
+# Ignore environment variables file
+.env
+
+# Optional: Ignore any other generated files or directories
+build/
+coverage/
+.DS_Store
